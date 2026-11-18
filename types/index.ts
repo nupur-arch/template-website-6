@@ -1,0 +1,9 @@
+export type Category = { id: string; name: string; slug: string; color: string };
+export type Article = { id: string; slug: string; title: string; excerpt: string; body: string; category: Category; image: string | null; publishedAt: string; readTime: number; featured: boolean };
+export type Team = { id: string; name: string; shortName: string; logo: string | null };
+export type Player = { id: string; name: string; teamId: string; position: string; image: string | null };
+export type Match = { id: string; leagueId: string; homeTeam: Team; awayTeam: Team; homeScore: number | null; awayScore: number | null; startsAt: string; status: "scheduled" | "live" | "final" };
+export type Standing = { id: string; leagueId: string; team: Team; played: number; won: number; drawn: number; lost: number; points: number };
+export type League = { id: string; name: string; slug: string; sport: string };
+export type SearchGroup = "news" | "teams" | "players";
+export type SearchResult = { id: string; title: string; subtitle: string; image: string | null; href: string; group: SearchGroup };

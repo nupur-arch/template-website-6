@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: 242 239 230;
+  --ink: 11 16 48;
+  --riso: 43 63 255;
+  --pink: 255 111 177;
+  --sun: 255 217 59;
+  --header-h: 4.5rem;
+  color-scheme: light;
+}
+
+.dark {
+  --paper: 10 13 36;
+  --ink: 242 239 230;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { background: rgb(var(--paper)); }
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: rgb(var(--paper));
+  color: rgb(var(--ink));
+  font-family: var(--font-mono), monospace;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: .18;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.23'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+.dark body::before { mix-blend-mode: screen; opacity: .08; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+button { color: inherit; }
+:focus-visible { outline: 3px solid rgb(var(--pink)); outline-offset: 3px; }
+.display { font-family: var(--font-display), sans-serif; letter-spacing: -.04em; }
+.halftone {
+  background-image: radial-gradient(circle, rgb(var(--ink) / .22) 1px, transparent 1.5px);
+  background-size: 8px 8px;
+}
+.misregister { text-shadow: 3px 0 rgb(var(--pink)), -3px 0 rgb(var(--riso)); }
+.misregister-box { box-shadow: 5px 5px 0 rgb(var(--pink)), -5px -5px 0 rgb(var(--riso)); }
+.line-clamp-2 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.torn-edge { clip-path: polygon(0 0,100% 0,100% 88%,97% 94%,93% 89%,89% 97%,84% 90%,79% 96%,74% 89%,69% 96%,64% 90%,59% 98%,54% 90%,49% 96%,44% 89%,39% 97%,34% 90%,29% 96%,24% 89%,19% 97%,14% 90%,9% 96%,4% 90%,0 96%); }
+@media (hover: hover) { .lift:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 rgb(var(--ink)); } }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
