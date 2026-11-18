@@ -17,6 +17,7 @@
 - Step 2 — hero infinite drag canvas complete (`components/hero/hero-canvas.tsx`, `app/page.tsx`, `app/globals.css`).
 - All 20 normalized featured articles render as server output and are reachable through free drag or keyboard arrows; tiles open a shared-layout preview with article links.
 - Canvas/Grid toggle, desktop cursor and depth response, mobile staggered snap strip, touch-safe vertical scrolling, and reduced-motion static grid are implemented.
+- Step 2 layout correction complete: masthead/content separation prevents heading overlap, Grid uses natural-height rows, and Canvas tiles use controlled 250–330px dimensions with keyboard focus-following (`components/hero/hero-canvas.tsx`, `app/globals.css`).
 
 ## In progress
 
@@ -36,3 +37,4 @@
 - Unsplash remote images are mock-only and allowed through `next.config.ts`; all rendering goes through `components/safe-image.tsx`.
 - Lenis is disabled for coarse pointers and reduced motion; desktop Lenis updates GSAP ScrollTrigger.
 - Hero canvas is dynamically imported, uses only `SafeImage` and theme tokens, and keeps `data-lenis-prevent` limited to its interactive surfaces.
+- Desktop hero reserves 13.5rem for its masthead; both Canvas and Grid begin below that boundary so cards never render under the title or toggle.
