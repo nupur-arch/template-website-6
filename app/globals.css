@@ -63,5 +63,13 @@ button { color: inherit; }
 .soft-card-shadow { box-shadow: 0 18px 45px rgb(31 36 33 / .10), 0 3px 12px rgb(var(--terracotta) / .08); }
 .line-clamp-2 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
 .soft-divider { border-radius: 0 0 50% 8% / 0 0 10% 4%; }
+.hero-shell { height: calc(100svh - var(--header-h)); min-height: 38rem; }
+.hero-static-grid { gap: 1.25rem; align-content: start; }
+.hero-mobile-strip { overscroll-behavior-x: contain; touch-action: pan-x pan-y; scrollbar-width: none; }
+.hero-mobile-strip::-webkit-scrollbar { display: none; }
 @media (hover: hover) { .lift:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgb(31 36 33 / .14); } }
-@media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .hero-mobile-strip { display: none; }
+  .hero-static-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); top: 10rem; }
+}

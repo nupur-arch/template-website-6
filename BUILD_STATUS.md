@@ -14,6 +14,9 @@
 - Shared SafeImage, MarkdownContent, Button and Skeleton components (`components/`).
 - Minimal proof home and search pages (`app/page.tsx`, `app/search/page.tsx`).
 - Validation passed: `yarn lint` and `yarn build`.
+- Step 2 — hero infinite drag canvas complete (`components/hero/hero-canvas.tsx`, `app/page.tsx`, `app/globals.css`).
+- All 20 normalized featured articles render as server output and are reachable through free drag or keyboard arrows; tiles open a shared-layout preview with article links.
+- Canvas/Grid toggle, desktop cursor and depth response, mobile staggered snap strip, touch-safe vertical scrolling, and reduced-motion static grid are implemented.
 
 ## In progress
 
@@ -32,3 +35,4 @@
 - Environment: `.env` sets `NEXT_PUBLIC_USE_MOCK=true`; set it to `false` and provide `NEXT_PUBLIC_API_BASE_URL` for live endpoints.
 - Unsplash remote images are mock-only and allowed through `next.config.ts`; all rendering goes through `components/safe-image.tsx`.
 - Lenis is disabled for coarse pointers and reduced motion; desktop Lenis updates GSAP ScrollTrigger.
+- Hero canvas is dynamically imported, uses only `SafeImage` and theme tokens, and keeps `data-lenis-prevent` limited to its interactive surfaces.
