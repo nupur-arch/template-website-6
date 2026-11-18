@@ -10,6 +10,7 @@ export default {
         surface: "rgb(var(--surface) / <alpha-value>)",
         soft: "rgb(var(--soft) / <alpha-value>)",
         ink: "rgb(var(--ink) / <alpha-value>)",
+        "accent-ink": "rgb(var(--accent-ink) / <alpha-value>)",
         muted: "rgb(var(--muted) / <alpha-value>)",
         line: "rgb(var(--line) / <alpha-value>)",
         sage: "rgb(var(--sage) / <alpha-value>)",

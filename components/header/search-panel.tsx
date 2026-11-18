@@ -45,7 +45,7 @@ export function SearchPanel({ open, onClose }: { open: boolean; onClose: () => v
         {!loading && query.length >= 2 && !error && results.length === 0 && <p className="mt-4 p-4 text-center">{strings.noResults}</p>}
         {query.length < 2 && recent.length > 0 && <div className="mt-4"><h2 className="text-xs font-bold uppercase">{strings.recentSearches}</h2><div className="mt-2 flex flex-wrap gap-2">{recent.map((item) => <button key={item} onClick={() => setQuery(item)} className="rounded-full border border-line bg-sage px-3 py-1 text-ink">{item}</button>)}</div></div>}
         {Object.entries(groups).map(([group, items]) => <div key={group} className="mt-4"><h2 className="border-b border-line pb-1 text-xs font-bold uppercase">{group}</h2>{items?.map((item) => { const index = results.indexOf(item); return <Link key={item.id} href={item.href} onClick={() => select(item)} className={`mt-2 grid grid-cols-[64px_1fr] gap-3 rounded-[24px] p-2 ${active === index ? "bg-butter/70 text-ink" : ""}`}><SafeImage src={item.image} alt="" category={group} width={64} height={48} className="h-12 w-16 object-cover"/><span><strong className="line-clamp-2"><Highlight text={item.title} query={query}/></strong><small className="block text-muted">{item.subtitle}</small></span></Link>; })}</div>)}
-        <Link href={`/search?q=${encodeURIComponent(query)}`} className="mt-4 block text-right text-xs font-bold uppercase text-terracotta underline">View all results →</Link>
+        <Link href={`/search?q=${encodeURIComponent(query)}`} className="mt-4 block text-right text-xs font-bold uppercase underline decoration-terracotta decoration-2 underline-offset-4">View all results →</Link>
       </section>
     </div>
   );

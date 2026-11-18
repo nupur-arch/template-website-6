@@ -2,6 +2,9 @@
 
 ## Done
 
+- restyled: soft rounded + new palette
+- Updated the visual brief and shared tokens, utilities, logo, favicon, image fallback, shell, home, search and brand surfaces (`PROJECT_BRIEF.md`, `app/globals.css`, `tailwind.config.ts`, `components/`, `app/`, `public/favicon.svg`).
+- Audited existing source for legacy colors, hard borders and square-corner utilities; `yarn lint` and `yarn build` pass.
 - Step 1 — foundation complete.
 - Next.js 15.5.29 App Router scaffold with TypeScript, Tailwind, Yarn, fonts, theme and motion providers (`app/`, `components/providers/`, `package.json`).
 - Paper/ink tokens, grain, halftone, misregistration and reduced-motion utilities (`app/globals.css`).
@@ -22,6 +25,8 @@
 
 ## Decisions
 
+- Restyle only: layout, features, content, data and functionality remain unchanged; article and sports routes are not yet implemented.
+- Terracotta identifies actions/links through backgrounds or underlines while foreground text uses AA-compliant dark ink; muted small text is kept on white surfaces where it meets AA.
 - Package manager: Yarn 1.22.22.
 - Framework: patched Next.js 15.5.29.
 - Environment: `.env` sets `NEXT_PUBLIC_USE_MOCK=true`; set it to `false` and provide `NEXT_PUBLIC_API_BASE_URL` for live endpoints.
