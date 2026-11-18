@@ -3,8 +3,8 @@
 Goal: a complete, unique, premium news website that looks hand-printed and is memorable after one visit. Never AI-generated or template-like. Responsive 320-1440px is mandatory. Mock data now, real API later.
 
 ## LOOK
-- Tokens (CSS variables, light + dark): paper #F2EFE6, ink #0B1030, riso blue #2B3FFF, fluorescent pink #FF6FB1, sun yellow #FFD93B. Dark mode: background #0A0D24, same inks.
-- Style: paper grain overlay (SVG noise), halftone dot patterns, slightly misregistered offset shadows on headlines and cards (pink/blue offset), chunky hard borders, torn-paper section dividers with light parallax, stickers and stamps.
+- Tokens (CSS variables, light): paper #F6F1EA, surface #FFFFFF, soft surface #EFE8DD, ink #1F2421, muted text #6B716B, line #E1D9CB, sage #A8B5A0, terracotta #C9694A, butter #F2D99B, dusty blue #B9C7D3. Dark mode: background #131715, surface #1C221F, soft surface #232A26, text #EDE8DF, muted #9AA29B, line #2C3530, terracotta #DA7A5A, sage #B8C4B0; butter and dusty blue remain restrained secondary accents. Terracotta is the primary action/link accent, sage and butter support chips and tiles, and dusty blue is rare. All text/action combinations must meet WCAG AA contrast in both themes.
+- Style: muted, warm and sophisticated. Everything is softly rounded: cards, tiles and images use 24–28px radii; buttons, chips, inputs and badges are pill-shaped; the header floats as a rounded bar; canvases, dropdowns, drawers and dialogs are rounded. Use 1px soft lines and layered shadows, with soft curved or wavy section dividers. Retain only very subtle paper grain and low-contrast halftone; stamps and stickers are round and soft. Duotone/halftone treatments use muted sage and terracotta. No neon, saturated primaries, hard chunky borders, offset/misregistered shadows or torn-paper edges.
 - Fonts (next/font): one heavy display grotesk + one mono for captions/labels.
 - Site name, categories, language and route names (default /sports) live in content/site.config.ts and content/strings.ts (default English).
 
@@ -30,7 +30,7 @@ Sticky header, expensive-looking logo, nav with animated underline, mobile drawe
 Search toggle: debounce 300ms, AbortController, min 2 chars. Rows like YouTube suggestions: thumbnail + title with highlighted match + category + time, grouped (news, teams, players), recent searches, arrow keys/Enter/Esc, Cmd/Ctrl+K, skeleton, empty state, full-screen sheet on mobile, plus /search page.
 
 ## LOGO
-Unique, relatable to news, custom SVG with a distinctive detail (e.g. a misregistered two-ink overprint of the mark); no clip-art or gradients. <Logo variant="full | mark | stacked" />, favicon, light/dark/single color, subtle draw-in, /brand page.
+Unique, relatable to news, custom SVG with a distinctive detail (a softly offset terracotta-and-sage overprint inside a rounded mark); no clip-art or gradients. <Logo variant="full | mark | stacked" />, favicon, light/dark/single color, subtle draw-in, /brand page.
 
 ## HERO (exactly 20 news): infinite drag canvas
 Full viewport. 20 tiles of different sizes scattered on a large canvas, dragged with inertia in any direction (wrap-around), depth parallax between layers. Hover enlarges a tile and turns its halftone/duotone image to full color. Custom cursor (desktop only) shows "Drag" and "Open". "Today's 20" counter, Canvas/Grid view toggle, stamp badge. Click expands the tile into an article preview with a shared-element transition (layoutId) and a link to the article. Keyboard: arrows move focus between tiles, Enter opens. All 20 links server-rendered. Mobile: staggered 2-column snap strip instead of free drag. Reduced-motion: static grid.
